@@ -125,8 +125,30 @@ function convertToRomanNumerals(/* num */) {
  *  '10,5'    => 'one zero point five'
  *  '1950.2'  => 'one nine five zero point two'
  */
+/* prettier-ignore */
 function convertNumberToString(/* numberStr */) {
   throw new Error('Not implemented');
+  // const dict = {
+  //   '0': 'zero',
+  //   '1': 'one' ,
+  //   '2': 'two' ,
+  //   '3': 'three' ,
+  //   '4': 'four' ,
+  //   '5': 'five' ,
+  //   '6': 'six' ,
+  //   '7': 'seven' ,
+  //   '8': 'eight' ,
+  //   '9': 'nine',
+  //   '-': 'minus',
+  //   '.': 'point',
+  //   ',': 'point'
+  // }
+  // let ans = '';
+  // // eslint-disable-next-line no-restricted-syntax
+  // for (const i of numberStr) {
+  //   ans += (`${dict[i]  } `);
+  // }
+  // return ans.trim();
 }
 
 /**
@@ -159,8 +181,12 @@ function isPalindrome(/* str */) {
  *  'qwerty', 'Q'     => -1
  *  'qwerty', 'p'     => -1
  */
-function getIndexOf(/* str, letter */) {
-  throw new Error('Not implemented');
+function getIndexOf(str, letter) {
+  let ans = -1;
+  for (let i = 0; i < str.length; i += 1) {
+    if (str[i] === letter) ans = i;
+  }
+  return ans;
 }
 
 /**
