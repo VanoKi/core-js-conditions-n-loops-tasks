@@ -63,8 +63,21 @@ function getMaxNumber(a, b, c) {
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  */
-function canQueenCaptureKing(/* queen, king */) {
-  throw new Error('Not implemented');
+function canQueenCaptureKing(queen, king) {
+  // throw new Error('Not implemented');
+  let flag = false;
+  for (const [key, value] of Object.entries(king)) {
+    if (value === queen[key]) {
+      flag = true;
+      break;
+    }
+  }
+  if (!flag) {
+    if (Math.abs(queen.x - king.x) === Math.abs(queen.y - king.y)) {
+      flag = true;
+    }
+  }
+  return flag;
 }
 
 /**
@@ -126,53 +139,52 @@ function convertToRomanNumerals(/* num */) {
  *  '1950.2'  => 'one nine five zero point two'
  */
 
-/* prettier-ignore */
 function convertNumberToString(numberStr) {
   let ans = '';
   for (let i = 0; i < numberStr.length; i += 1) {
     switch (numberStr[i]) {
-      case "1":
+      case '1':
         ans += ' one';
         break;
-      case "2":
+      case '2':
         ans += ' two';
         break;
-      case "3":
+      case '3':
         ans += ' three';
         break;
-      case "4":
+      case '4':
         ans += ' four';
         break;
       case '5':
-        ans += ' five'
-        break
-      case "6":
+        ans += ' five';
+        break;
+      case '6':
         ans += ' six';
         break;
-      case "7":
+      case '7':
         ans += ' seven';
         break;
-      case "8":
+      case '8':
         ans += ' eight';
         break;
-      case "9":
+      case '9':
         ans += ' nine';
         break;
-      case "0":
+      case '0':
         ans += ' zero';
         break;
       case '-':
-        ans += 'minus'
+        ans += 'minus';
         break;
       case '.':
         ans += ' point';
-        break
+        break;
       case ',':
         ans += ' point';
-        break
+        break;
       default:
-        break
-      }
+        break;
+    }
   }
   return ans.trim();
 }
@@ -190,14 +202,13 @@ function convertNumberToString(numberStr) {
  *  'qweqwe'    => false
  */
 
-/* prettier-ignore */
 function isPalindrome(str) {
   for (let i = 0, j = str.length - 1; i < str.length; i += 1, j -= 1) {
     if (!(str[i] === str[j])) {
       return false;
     }
   }
-  return true
+  return true;
 }
 
 /**
@@ -323,8 +334,23 @@ function sortByAsc(/* arr */) {
  *  '012345', 3 => '024135' => '043215' => '031425'
  *  'qwerty', 3 => 'qetwry' => 'qtrewy' => 'qrwtey'
  */
-function shuffleChar(/* str, iterations */) {
-  throw new Error('Not implemented');
+function shuffleChar(str, iterations) {
+  const shuffles = (s) => {
+    let even = '';
+    let odd = '';
+    for (let i = 0; i < s.length; i += 1) {
+      if (i % 2 !== 0) odd += s[i];
+      else even += s[i];
+    }
+    return even + odd;
+  };
+  let preparedString = str;
+  let numb = iterations;
+  while (numb > 0) {
+    preparedString = shuffles(preparedString);
+    numb -= 1;
+  }
+  return preparedString;
 }
 
 /**
