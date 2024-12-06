@@ -13,11 +13,12 @@ The task is to implement functions on different Core JS topics. This module requ
 ## Prepare and test
 
 1. Install Node.js
-2. Fork this repository: https://github.com/rolling-scopes-school/coreJs-conditions-n-loops-tasks
-3. Clone your newly created repo: `https://github.com/<%your_github_username%>/coreJs-conditions-n-loops-tasks/`
-4. Go to folder `coreJs-conditions-n-loops-tasks`
+2. Fork this repository: https://github.com/rolling-scopes-school/core-js-conditions-n-loops-tasks
+3. Clone your newly created repo: `https://github.com/<%your_github_username%>/core-js-conditions-n-loops-tasks/`
+4. Go to folder `core-js-conditions-n-loops-tasks`
 5. To install all dependencies use `npm install`
 6. Each task is usually a regular function:
+
    ```javascript
    /**
     * Returns the maximum of three numbers.
@@ -39,6 +40,7 @@ The task is to implement functions on different Core JS topics. This module requ
    ```
 
    Read the task description in the comment above the function. Try to understand the idea. You can see the tests prepared if you don't understand it.
+
 7. Write your code in `src/conditions-n-loops-tasks.js`.
 
    Uncomment the incoming parameters:
@@ -59,10 +61,11 @@ The task is to implement functions on different Core JS topics. This module requ
 
 ## Submit to [rs app](https://app.rs.school/)
 
-1. Open [rs app](https://app.rs.school/) and login
-2. Go to [submit task page](https://app.rs.school/course/submit-task?course=rs-2023-q4)
-3. Select your task (Core JS Conditions-n-loops)
-4. Press submit button and enjoy
+1. Commit and push your solutions to your fork
+2. Open [rs app](https://app.rs.school/) and login
+3. Go to [submit task page](https://app.rs.school/course/submit-task?course=rs-2023-q4)
+4. Select your task (Core JS Conditions-n-loops)
+5. Press submit button and enjoy
 
 ## Notes
 
@@ -70,6 +73,18 @@ The task is to implement functions on different Core JS topics. This module requ
 - Installing nodejs `v16` is optional, you can run jobs using your version and not use methods that are not in nodejs `v16`.
 - Please be sure that each of your test in limit of 30sec.
 - You will get 0 (zero) if you have any eslint's errors or warnings.
+
+## Obfuscated Functions in the Test Suite
+
+In this project, the test suite includes obfuscated functions that contain the solution to the algorithmic tasks. The purpose of obfuscation is to conceal the direct implementation details while still providing a mechanism to verify the correctness of the solution.
+
+## Why Obfuscation?
+
+1. **Security and Academic Integrity:**
+  - Obfuscation helps protect the integrity of the test suite and prevents unauthorized access to the solution.
+  - It discourages plagiarism and ensures that students engage with the problem-solving process rather than relying on pre-existing code snippets.
+2. **Focus on Algorithmic Understanding:**
+  - By obfuscating the functions, the emphasis is placed on understanding the underlying algorithm and logic rather than relying on pre-existing code snippets.
 
 ## FAQ
 
@@ -93,6 +108,18 @@ $ npm run lint:fix
 
 **Question:** The solution in the local repository succeeds and all tests are "green", but in the application some tests don't count. What to do?<br>
 **Answer**: [Update your repository fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork), update the local repository from the fork, run tests and fix your solution. After fixing, resubmit your solution for testing.
+
+**Question:** The solution in the local repository succeeds and all tests are "green", fork is up-to-date, but in the application some tests don't count. What to do?<br>
+**Answer**: Some tests generate a new data set each time they run. Maybe your solution is not universal and fails in certain situations. Run the tests 3-5 times and make sure they complete successfully.
+
+**Question:** The number of milliseconds is written in yellow or red next to the result of the individual tests. What does this mean?<br>
+**Answer**: This means that your solution's speed test most likely fails on the server, but passes with you because your computer is fast enough. You need to revise the solution and improve the execution time.
+
+**Question:** I don't trust the obfuscated code in the tests. How can I verify my solution?<br>
+**Answer**: You can use tools to containerize the solution. For example, [using Docker](https://docs.docker.com/guides/language/nodejs/) you can run tests in an isolated container.
+
+**Question:** What happens if I use the ready-made solution found in the test utilities?<br>
+**Answer**: It is a violation of school policy to use an off-the-shelf solution, and you should carefully review the [section of the documentation that describes this](https://docs.rs.school/#/dismission).
 
 ---
 
