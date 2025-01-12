@@ -128,8 +128,46 @@ function convertToRomanNumerals(/* num */) {
  *  '1950.2'  => 'one nine five zero point two'
  */
 
-function convertNumberToString(/* numberStr */) {
-  throw new Error('Not implemented');
+function convertNumberToString(numberStr) {
+  function digitToString(value) {
+    switch (value) {
+      case '-':
+        return 'minus';
+      case '.':
+      case ',':
+        return 'point';
+      case '0':
+        return 'zero';
+      case '1':
+        return 'one';
+      case '2':
+        return 'two';
+      case '3':
+        return 'three';
+      case '4':
+        return 'four';
+      case '5':
+        return 'five';
+      case '6':
+        return 'six';
+      case '7':
+        return 'seven';
+      case '8':
+        return 'eight';
+      case '9':
+        return 'nine';
+      default:
+        return '';
+    }
+  }
+  let result = '';
+  for (let i = 0; i < numberStr.length; i += 1) {
+    result += digitToString(numberStr[i]);
+    if (i !== numberStr.length - 1) {
+      result += ' ';
+    }
+  }
+  return result;
 }
 
 /**
@@ -296,23 +334,8 @@ function sortByAsc(/* arr */) {
  *  '012345', 3 => '024135' => '043215' => '031425'
  *  'qwerty', 3 => 'qetwry' => 'qtrewy' => 'qrwtey'
  */
-function shuffleChar(str, iterations) {
-  const shuffles = (s) => {
-    let even = '';
-    let odd = '';
-    for (let i = 0; i < s.length; i += 1) {
-      if (i % 2 !== 0) odd += s[i];
-      else even += s[i];
-    }
-    return even + odd;
-  };
-  let preparedString = str;
-  let numb = iterations;
-  while (numb > 0) {
-    preparedString = shuffles(preparedString);
-    numb -= 1;
-  }
-  return preparedString;
+function shuffleChar(/* str, iterations */) {
+  throw new Error('Not implemented');
 }
 
 /**
