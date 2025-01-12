@@ -42,7 +42,12 @@ function isPositive(number) {
  *  -0.1, 0, 0.2  => 0.2
  */
 function getMaxNumber(a, b, c) {
-  return Math.max(a, b, c);
+  let max = 0;
+  const arr = [a, b, c];
+  for (let i = 0; i < arr.length; i += 1) {
+    if (arr[i] > max) max = arr[i];
+  }
+  return max;
 }
 
 /**
@@ -85,14 +90,8 @@ function canQueenCaptureKing(/* queen, king */) {
  *  2, 2, 5   => false
  *  3, 0, 3   => false
  */
-function isIsoscelesTriangle(a, b, c) {
-  const abc = [a, b, c].sort((n, m) => n - m);
-  if (!abc.includes(0)) {
-    if (new Set([a, b, c]).size === 2) {
-      return abc[0] + abc[1] > abc[2];
-    }
-  }
-  return false;
+function isIsoscelesTriangle(/* a, b, c */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -129,54 +128,8 @@ function convertToRomanNumerals(/* num */) {
  *  '1950.2'  => 'one nine five zero point two'
  */
 
-function convertNumberToString(numberStr) {
-  let ans = '';
-  for (let i = 0; i < numberStr.length; i += 1) {
-    switch (numberStr[i]) {
-      case '1':
-        ans += ' one';
-        break;
-      case '2':
-        ans += ' two';
-        break;
-      case '3':
-        ans += ' three';
-        break;
-      case '4':
-        ans += ' four';
-        break;
-      case '5':
-        ans += ' five';
-        break;
-      case '6':
-        ans += ' six';
-        break;
-      case '7':
-        ans += ' seven';
-        break;
-      case '8':
-        ans += ' eight';
-        break;
-      case '9':
-        ans += ' nine';
-        break;
-      case '0':
-        ans += ' zero';
-        break;
-      case '-':
-        ans += 'minus';
-        break;
-      case '.':
-        ans += ' point';
-        break;
-      case ',':
-        ans += ' point';
-        break;
-      default:
-        break;
-    }
-  }
-  return ans.trim();
+function convertNumberToString(/* numberStr */) {
+  throw new Error('Not implemented');
 }
 
 /**
