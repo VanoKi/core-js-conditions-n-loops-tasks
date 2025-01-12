@@ -23,6 +23,6 @@ module.exports = {
     ],
   },
   plugins: ['prettier'],
-  ignorePatterns: ['extensions/utility.js'],
+  ignorePatterns: ['extensions/utility.js', './src/draft.js'],
   noInlineConfig: true,
 };
