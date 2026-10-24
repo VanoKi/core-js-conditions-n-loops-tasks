@@ -69,8 +69,12 @@ function getMaxNumber(a, b, c) {
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  */
-function canQueenCaptureKing(/* queen, king */) {
-  throw new Error('Not implemented');
+function canQueenCaptureKing(queen, king) {
+  return (
+    queen.x === king.x ||
+    queen.y === king.y ||
+    Math.abs(queen.x - king.x) === Math.abs(queen.y - king.y)
+  );
 }
 
 /**
@@ -394,8 +398,47 @@ function shuffleChar(/* str, iterations */) {
  * 321321   => 322113
  *
  */
-function getNearestBigger(/* number */) {
-  throw new Error('Not implemented');
+function getNearestBigger(number) {
+  const arr = [];
+  let num = number;
+  while (num > 0) {
+    arr.unshift(num % 10);
+    num = Math.floor(num / 10);
+  }
+
+  let resultDigits = arr;
+  for (let i = arr.length - 1; i > 0; i -= 1) {
+    if (arr[i - 1] < arr[i]) {
+      const pivot = i - 1;
+      let replacementIndex = arr.length - 1;
+
+      while (arr[replacementIndex] <= arr[pivot]) {
+        replacementIndex -= 1;
+      }
+
+      const replacement = arr[replacementIndex];
+      arr[replacementIndex] = arr[pivot];
+      arr[pivot] = replacement;
+
+      let left = pivot + 1;
+      let right = arr.length - 1;
+      while (left < right) {
+        const temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
+        left += 1;
+        right -= 1;
+      }
+      resultDigits = arr;
+      break;
+    }
+  }
+
+  let result = 0;
+  for (let i = 0; i < resultDigits.length; i += 1) {
+    result = result * 10 + resultDigits[i];
+  }
+  return result;
 }
 
 module.exports = {
